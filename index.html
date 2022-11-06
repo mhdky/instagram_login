@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login Page</title>
+    <link rel="stylesheet" href="public/css/style.css">
+
+    <style>
+        .select-language {
+            animation: zoom-in 0.5s;
+        }
+
+        @keyframes zoom-in {
+            0% {
+                transform: scale(0.90);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="w-full mobile:w-[390px] mobile:mx-auto">
+    <!-- language select -->
+    <div class="show-language w-max mx-auto mt-3 text-gray-400 flex items-center">
+        <p class="text-lg">English</p>
+        <i class="fa-solid fa-chevron-down text-sm ml-1"></i>
+    </div>
+
+    <div class="container-language fixed z-20 top-0 right-0 bottom-0 left-0 bg-black-transperent hidden justify-center items-center">
+        <!-- close language -->
+        <div class="close-language absolute z-10 top-0 right-0 bottom-0 left-0 hidden"></div>
+
+        <div class="absolute z-20 w-[90%] mobile:w-[390px]">
+            <div class="select-language w-full h-[95vh] bg-white overflow-auto relative">
+                <h1 class="bg-white w-[90%] py-3 pl-5 text-xl font-bold border-b border-slate-200 fixed mobile:w-[390px]">SELECT YOUR LANGUAGE</h1>
+
+                <!-- search language -->
+                <div class="bg-white w-[90%] flex items-center py-4 pl-5 border-b border-slate-200 fixed top-[70px] mobile:w-[390px]">
+                    <i class="fa-solid fa-magnifying-glass text-2xl mr-3 text-gray-400"></i>
+                    <input type="text" placeholder="Search" class="w-full text-[22px] placeholder:text-gray-400 outline-none">
+                </div>
+
+                <!-- language -->
+                <div class="py-4 pl-5 mt-36">
+                    <p class="text-lg font-semibold flex items-center mb-5">English <i class="fa-solid fa-check text-xl text-blue-700 ml-3"></i></p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Afrikaans</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Bahasa Indonesia</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Bahasa Melayu</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Dansk</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Deutsch</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Enlish (UK)</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Espanol</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Espanol (Espana)</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Filipino</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Francis (Canada)</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Francis (France)</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Italiano</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Nederlands</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Polski</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Portugues (Brasil)</p>
+                    <p class="text-lg font-semibold flex items-center mb-5">Portugues (Portugal)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- instagram logo -->
+    <img src="public/img/instagram.png" alt="Instagram Logo" class="w-44 mx-auto mt-3">
+
+    <form action="/" autocomplete="off" class="w-full px-8 -mt-12">
+        <!-- username -->
+        <div class="w-full h-14 bg-form-bg border border-form-border rounded-md">
+            <input type="text" id="input-username" placeholder="Phone number, email, or username" onkeyup="loginShow()" class="text-[15px] w-full h-full px-3 rounded-md bg-transparent outline-none placeholder:text-gray-400">
+        </div>
+
+        <!-- password --> 
+        <div class="w-full my-5 h-14 bg-form-bg border border-form-border rounded-md flex items-center">
+            <input type="password" id="input-password" placeholder="Password" onkeyup="loginShow()" class="text-[15px] w-full h-full px-3 rounded-md bg-transparent outline-none placeholder:text-gray-400">
+
+            <div class="relative">
+                <i class="eye-pass fa-solid fa-eye mr-5 text-gray-400"></i>
+                <div class="line-hide bg-gray-400 w-[3px] h-6 rotate-[130deg] absolute top-[-1px] right-7"></div>
+                <input type="checkbox" onclick="checkPassword()" class="check-pass w-5 h-5 absolute z-10 top-0 right-5 opacity-0">
+            </div>
+        </div>
+
+        <button type="submit" disabled class="login w-full bg-blue-700 h-14 text-white text-lg font-bold rounded-md opacity-30">Log In</button>
+    </form>
+
+    <p class="w-max mx-auto py-5 text-sm text-gray-400">Forgot your login details? <span class="text-blue-800 font-bold">Get help logging in.</span></p>
+
+    <div class="w-full px-8 flex items-center">
+        <div class="w-1/2 h-[1px] bg-gray-400"></div>
+        <p class="px-5 text-gray-600 font-bold">OR</p>
+        <div class="w-1/2 h-[1px] bg-gray-400"></div>
+    </div>
+
+    <div class="w-full px-8 mt-5">
+        <a href="/" class="w-full h-14 bg-blue-700 rounded-md flex justify-center items-center">
+            <i class="fa-brands fa-facebook text-white text-3xl"></i>
+            <p class="text-white text-lg ml-2">Continue as Muhammad Rizki</p>
+        </a>
+    </div>
+
+    <div class="w-full fixed bottom-0 border-t border-gray-400 py-5 mobile:hidden">
+        <p class="w-max mx-auto">Don't have an account? <span class="text-blue-800 font-bold">Sign up.</span></p>
+    </div>
+
+    <script src="public/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/209072fbdb.js" crossorigin="anonymous"></script>
+</body>
+</html>

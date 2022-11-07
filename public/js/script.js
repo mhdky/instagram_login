@@ -25,7 +25,7 @@ function checkPassword() {
     eyePass.classList.toggle('text-blue-700');
 }
 
-function loginShow () {
+function loginShow() {
     const inputUsername = document.querySelector('#input-username');
     const inputPassword = document.querySelector('#input-password');
     const login = document.querySelector('.login');

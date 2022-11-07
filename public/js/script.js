@@ -34,7 +34,6 @@ function loginShow() {
         login.style.opacity = '1';
     } else {
         login.disabled = true;
-        login.style.opacity = 0.4;
+        login.style.opacity = 0.3;
     }
 }
-// ok
